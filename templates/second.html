@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title id="title">九品芝麻官-吾爱磁力搜索|bt搜索</title>
+        <meta name="keywords" content="<{$kw}> 磁力搜索|bt搜索|云书搜索">
+        <meta name="description" content="<{$kw}> 专业的磁力搜索引擎|bt搜索 爱磁力搜索 吾爱磁力搜索 爬虫搜索">
+        <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+        <script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            (function() {
+                var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?0a5a71f484e5c469666ff5a3c413c395" : "https://jspassport.ssl.qhimg.com/11.0.1.js?0a5a71f484e5c469666ff5a3c413c395";
+                document.write('<script src="' + src + '" id="sozz"><\/script>');
+            }
+            )();
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <input id="idSearchKey" name="key" type="hidden" value="九品芝麻官">
+            <input id="idSearchPage" name="value" type="hidden" value="1">
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/" title="云书">
+                            <span class="glyphicon glyphicon-magnet"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;吾爱磁力搜索
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/" title="首页">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                    &nbsp;首&nbsp;页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/static/game/" title="超速智力拼图游戏">
+                                    <span class="glyphicon glyphicon-tower"></span>
+                                    &nbsp;超速智力拼图游戏
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about" title="关于">
+                                    <span class="glyphicon glyphicon-tags"></span>
+                                    &nbsp;关&nbsp;于
+                                </a>
+                            </li>
+                        </ul>
+                        <span style="float:right;margin-top:8px;color:red;">
+                            <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eb62034500fa19f5dcf6bcbacc389abce0605371df5b3741fd1c77c475f3fbc1">
+                                <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="吾爱磁力" title="吾爱磁力">
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hot_search">
+                    <div class="col-md-5  hot_form">
+                        <form action="{% url 'search_form' %}" method="post" name="search">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control stext" name="movie_name" id="serach" placeholder="输入关键字，搜索有惊喜" required="" autofocus="" x-webkit-speech="" name="kw" value="" baidusug="1">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                        搜索
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="alert alert-warning">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>当前</strong>
+                    搜索要点：如果要搜索某个词，当拆分时搜索不到，可以试试搜索全词,搜索人数多，请耐心等待结果,(没有结果的时候可以尝试刷新)
+
+                </div>
+                <div class="row" style='min-height:360px;'>
+                    <div id='id_col8_content' class="col-md-8 search_list">
+                        <div id='adlefttop'></div>
+                        <ul id="media-list">
+                            <li class="media">
+                                <div class="media-body">
+                                    <h4>
+                                        <a class="title" target="_blank" href="/baiyue/detail/{{ movie.md_link.magnetic_link }}">
+                                            {{movie.movie_name}}
+                                        </a>
+                                    </h4>
+                                    <div class="s_b">
+                                        <cite>
+                                            发布日期：<b>{{movie.release_time}}</b>
+                                        </cite>
+                                        <cite>
+                                            文件大小：
+                                            <span class="label label-danger">
+                                                <b>{{movie.file_size}}</b>
+                                            </span>
+                                        </cite>
+                                        <cite>
+                                            主演：<b>{{movie.act_role}}</b>
+                                        </cite>
+                                        <span class="glyphicon glyphicon-save">
+                                            <a href="/baiyue/detail">磁力下载</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row" style="margin-left: 20px;">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-6410991591896483" data-ad-slot="5851519854"></ins>
+                            <script>
+
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                        <div id='adrighttop' class="col-md-12" style="padding-right: 0px;"></div>
+                    </div>
+                </div>
+                <div height='1px;' id='adtlovelist'>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6410991591896483" data-ad-slot="4507919457"></ins>
+                    <script>
+
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <ul id='pageIndex' class="pagination" style="margin-top:10px"></ul>
+                <div id='adleftbottom'></div>
+            </div>
+            <div id="footer">
+                <div class="container">
+                    <p class="text-muted">
+                        Copyright @ 2013-2015 资源提供:
+                        <a href="http://www.cloudbooks.top/" target="_blank" style="color:#336600;">
+                            <b>云书磁力搜索</b>
+                        </a>
+                        All rights reserved. 备案号:皖ICP备16004259号
+
+
+                        <em class="f_info">
+                            <a href="javascript:scrollTo(0,0);">返回顶部</a>
+                        </em>
+                        <em class="f_info">
+                            <a href="about" title="免责声明">免责声明</a>
+                            &nbsp;&nbsp
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <script>
+
+                function getSize(length) {
+                    var s = '';
+                    if (length < 1024) {
+                        s = length + 'B';
+                    } else if (length < 1048576) {
+                        s = parseInt(length / 1024) + 'KB';
+                    } else if (length < 1073741824) {
+                        s = parseInt(length / 1024 / 1024) + 'MB';
+                    } else {
+                        s = parseInt(length / 1024 / 1024 / 1024) + 'GB';
+                    }
+                    return s;
+
+                }
+
+                function timestampToTime(timestamp) {
+                    var date = new Date(timestamp * 1000);
+                    Y = date.getFullYear() + '-';
+                    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                    D = date.getDate() + ' ';
+                    h = date.getHours() + ':';
+                    m = date.getMinutes() + ':';
+                    s = date.getSeconds();
+                    return Y + M + D + h + m + s;
+                }
+
+                function renderContent(jsd) {
+                    htm = '';
+                    for (var k = 0, length = jsd.Matches.length; k < length; k++) {
+                        htm = htm + '<li class="media"><div class="media-body"><h4>' + '<a class="title" target="_blank" href="/detail/' + jsd.Matches[k].id + '">' + decodeURI(jsd.Matches[k].Attrs.Name) + ' </a>  </h4>' + '<div class="s_b">   <cite>发布日期：<b>' + timestampToTime(jsd.Matches[k].Attrs.create_time) + '</b></cite>' + '<cite>文件大小：<span class="label label-danger"><b>' + getSize(jsd.Matches[k].Attrs.length) + '</b> </span></cite>' + ' <cite>访问热度：<b> ' + jsd.Matches[k].Attrs.Requests + '</b></cite>    ' + '<span class="glyphicon glyphicon-save"><a href="/detail/' + jsd.Matches[k].id + '">磁力下载</a></span> </div></div></li>';
+                    }
+                    $('#media-list').html(htm);
+                }
+                function getIndex(key, page) {
+                    console.log("key and page:", key, page);
+                    $.ajax({
+                        cache: false,
+                        type: "HEAD",
+                        url: "/magnet/search/" + key + "/" + page,
+
+                        async: true,
+                        success: function(data, textStatus, request) {
+                            jdata = $.parseJSON(request.getResponseHeader('backstr'));
+
+                            if (jdata.total == 0) {
+                                return;
+                            }
+                            renderContent(jdata);
+                            addPage(jdata.total_found, page, $('#idSearchKey').val())
+                        }
+                    });
+                }
+
+                function doGetdata(this_) {
+                    getIndex($('#idSearchKey').val(), $(this_).attr('cpage'));
+                }
+
+                (function() {
+
+                    getIndex($('#idSearchKey').val(), 1);
+
+                }
+                )();
+
+                function addPage(tpage, page, kw) {
+
+                    var maxpage = parseInt(tpage / 20);
+                    var pp = page - 4;
+                    if (page > maxpage - 8) {
+                        pp = maxpage - 7;
+                    }
+                    if (pp < 1) {
+                        pp = 1;
+
+                    }
+                    var privous = parseInt(page) - 1;
+                    if (privous < 1) {
+                        privous = 1;
+                    }
+                    var next = parseInt(page) + 1;
+                    pageHtml = '<li><a href="#" class="changepage" cpage=' + privous + ' onclick="doGetdata(this);">上一页</a></li>'
+                    for (var i = 0; i < 8; i++) {
+                        pageHtml = pageHtml + '<li><a href="#" class="changepage" cpage=' + (pp + i) + ' onclick="doGetdata(this);">' + (pp + i) + '</a></li>';
+                        if (pp + i > maxpage + 1) {
+                            break;
+                        }
+                    }
+                    pageHtml = pageHtml + '<li><a href="#" class="changepage" cpage=' + next + ' onclick="doGetdata(this);">下一页</a></li>'
+                    $('#pageIndex').html(pageHtml);
+                }
+            </script>
+            <script type="text/javascript" src="/static/js/template-web.js"></script>
+            <script type="text/javascript" color="0,0,255" opacity="0.5" count="99" src="/static/js/panel.js"></script>
+            <script></script>
+            <script>
+
+                (function(i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function() {
+
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }
+                    ,
+                    i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+
+                    m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+
+                }
+                )(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-103968667-2', 'auto');
+
+                ga('send', 'pageview');
+            </script>
+    </body>
+</html>
